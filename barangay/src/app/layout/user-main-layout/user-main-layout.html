@@ -1,0 +1,31 @@
+<div class="main-layout">
+
+    <app-header [isLogin]="isLogin" 
+                [(showLeftAside)]="showLeftAside"
+                [(showRightAside)]="showRightAside">
+    </app-header>
+
+    <div class="main-layout-inner">
+
+        @if(currentWidth > 700 || showLeftAside){
+            <app-left-aside [currentWidth]="currentWidth"
+                            [(showLeftAside)]="showLeftAside" 
+                            [isLogin]="isLogin"
+                            [user]="user">
+            </app-left-aside>
+        }
+
+        <main class="main-container">
+            <router-outlet></router-outlet>
+        </main>
+
+        @if(currentWidth > 1000 || showRightAside){
+            <app-right-aside [currentWidth]="currentWidth" 
+                             [(showRightAside)]="showRightAside"
+                             [isLogin]="isLogin">
+            </app-right-aside>
+        }
+
+    </div>
+
+</div>

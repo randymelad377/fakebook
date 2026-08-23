@@ -1,0 +1,585 @@
+:host {
+    flex: 1;
+    min-height: 0;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    scrollbar-width: thin;
+    scrollbar-color: #bcc0c4 transparent;
+}
+
+
+/* Chrome / Edge / Safari scrollbar */
+
+:host::-webkit-scrollbar {
+    width: 8px;
+}
+
+:host::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+:host::-webkit-scrollbar-thumb {
+    background: #bcc0c4;
+    border-radius: 10px;
+}
+
+:host::-webkit-scrollbar-thumb:hover {
+    background: #8f9398;
+}
+
+
+/* =========================================
+   ANNOUNCEMENT FEED
+========================================= */
+
+.announcement-card-oc {
+    width: 100%;
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    padding: 20px 16px 40px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   POST CARD
+========================================= */
+
+.post-header-oc {
+    position: relative;
+
+    width: 100%;
+
+    background: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow-surface);
+
+    overflow: visible;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   POSTER HEADER
+========================================= */
+
+.poster-info {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 16px;
+}
+
+
+/* =========================================
+   POSTER LEFT SIDE
+========================================= */
+
+.poster-info > div:first-child {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-width: 0;
+}
+
+
+/* =========================================
+   POSTER IMAGE
+========================================= */
+
+.poster-info > div:first-child > img {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    background: var(--color-background);
+}
+
+
+/* =========================================
+   POSTER INFORMATION
+========================================= */
+
+.poster-info-ic {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    min-width: 0;
+}
+
+.poster-info-ic p {
+    margin: 0;
+}
+
+
+/* Poster name */
+
+.poster-info-ic p:first-child {
+    color: var(--color-text);
+
+    font-size: 17px;
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* Date */
+
+.poster-info-ic p:last-child {
+    color: var(--color-text-secondary);
+
+    font-size: 14px;
+    font-weight: 400;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================
+   ELLIPSIS
+========================================= */
+
+.poster-info > .fa-ellipsis {
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: var(--color-text-secondary);
+
+    font-size: 19px;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.15s ease,
+        color 0.15s ease;
+}
+
+.poster-info > .fa-ellipsis:hover {
+    background: var(--color-background);
+
+    color: var(--color-text);
+}
+
+
+/* =========================================
+   SETTINGS MENU
+========================================= */
+
+.setting-oc {
+    position: absolute;
+
+    top: 62px;
+    right: 16px;
+
+    width: 180px;
+
+    padding: 6px;
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+
+    border-radius: var(--radius);
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.12),
+        0 8px 24px rgba(0, 0, 0, 0.10);
+
+    z-index: 100;
+
+    animation: menuOpen 0.12s ease-out;
+}
+
+
+/* Dropdown animation */
+
+@keyframes menuOpen {
+    from {
+        opacity: 0;
+        transform: translateY(-4px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =========================================
+   SETTINGS BUTTONS
+========================================= */
+
+.setting-oc button {
+    width: 100%;
+
+    min-height: 44px;
+
+    padding: 0 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background: transparent;
+
+    color: var(--color-text);
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.15s ease,
+        color 0.15s ease;
+}
+
+.setting-oc button:hover {
+    background: var(--color-background);
+}
+
+.setting-oc button:active {
+    background: #e4e6eb;
+}
+
+
+/* Delete */
+
+.setting-oc button:last-child {
+    color: #e41e3f;
+}
+
+.setting-oc button:last-child:hover {
+    background: #ffebeF;
+
+    color: #d9183b;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.description-oc {
+    padding: 0 16px 16px;
+}
+
+.description-oc p {
+    margin: 0;
+
+    color: var(--color-text);
+
+    font-size: 17px;
+
+    line-height: 1.55;
+
+    word-break: break-word;
+}
+
+
+/* =========================================
+   POST IMAGES
+========================================= */
+
+.post-header-oc > div:nth-child(3) {
+    width: 100%;
+
+    display: grid;
+
+    gap: 3px;
+
+    background: var(--color-background);
+
+    overflow: hidden;
+}
+
+
+/* Image */
+
+.post-header-oc > div:nth-child(3) img {
+    width: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    cursor: pointer;
+
+    transition: filter 0.15s ease;
+}
+
+.post-header-oc > div:nth-child(3) img:hover {
+    filter: brightness(0.92);
+}
+
+
+/* =========================================
+   ONE IMAGE
+========================================= */
+
+.post-header-oc > div:nth-child(3):has(img:only-child) {
+    display: block;
+}
+
+.post-header-oc > div:nth-child(3):has(img:only-child) img {
+    width: 100%;
+    height: 420px;
+
+    object-fit: cover;
+}
+
+
+/* =========================================
+   TWO IMAGES
+========================================= */
+
+.post-header-oc > div:nth-child(3):has(img:nth-child(2):last-child) {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.post-header-oc > div:nth-child(3):has(img:nth-child(2):last-child) img {
+    width: 100%;
+    height: 300px;
+
+    object-fit: cover;
+}
+
+
+/* =========================================
+   THREE OR MORE IMAGES
+========================================= */
+
+.post-header-oc > div:nth-child(3):has(img:nth-child(3)) {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.post-header-oc > div:nth-child(3):has(img:nth-child(3)) img {
+    width: 100%;
+    height: 240px;
+
+    object-fit: cover;
+}
+
+
+/* =========================================
+   ACTION BAR
+========================================= */
+
+.action-oc {
+    display: flex;
+
+    align-items: center;
+
+    padding: 6px 8px;
+
+    border-top: 1px solid var(--color-border);
+}
+
+
+/* Action buttons */
+
+.action-oc button {
+    flex: 1;
+
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    border-radius: var(--radius);
+
+    background: transparent;
+
+    color: var(--color-text-secondary);
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.15s ease,
+        color 0.15s ease;
+}
+
+.action-oc button:hover {
+    background: var(--color-background);
+
+    color: var(--color-text);
+}
+
+.action-oc button:active {
+    background: #e4e6eb;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .announcement-card-oc {
+        padding: 8px 0 24px;
+
+        gap: 8px;
+    }
+
+    .post-header-oc {
+        border-radius: 0;
+
+        border-left: none;
+        border-right: none;
+    }
+
+
+    /* Header */
+
+    .poster-info {
+        padding: 14px 16px;
+    }
+
+    .poster-info > div:first-child {
+        gap: 10px;
+    }
+
+    .poster-info > div:first-child > img {
+        width: 44px;
+        height: 44px;
+    }
+
+    .poster-info-ic p:first-child {
+        font-size: 16px;
+    }
+
+    .poster-info-ic p:last-child {
+        font-size: 13px;
+    }
+
+
+    /* Ellipsis */
+
+    .poster-info > .fa-ellipsis {
+        width: 38px;
+        height: 38px;
+
+        font-size: 18px;
+    }
+
+
+    /* Settings */
+
+    .setting-oc {
+        top: 58px;
+        right: 12px;
+
+        width: 160px;
+    }
+
+    .setting-oc button {
+        min-height: 42px;
+
+        font-size: 14px;
+    }
+
+
+    /* Description */
+
+    .description-oc {
+        padding: 0 16px 14px;
+    }
+
+    .description-oc p {
+        font-size: 16px;
+    }
+
+
+    /* Images */
+
+    .post-header-oc > div:nth-child(3):has(img:only-child) img {
+        height: 320px;
+    }
+
+    .post-header-oc > div:nth-child(3):has(img:nth-child(2):last-child) img {
+        height: 220px;
+    }
+
+    .post-header-oc > div:nth-child(3):has(img:nth-child(3)) img {
+        height: 180px;
+    }
+
+
+    /* Actions */
+
+    .action-oc button {
+        height: 42px;
+
+        font-size: 14px;
+    }
+}

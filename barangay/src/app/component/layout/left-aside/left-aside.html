@@ -1,0 +1,35 @@
+<aside class="left-aside">
+    <nav class="left-aside-ic">
+
+        <div class="main-nav">
+            <a routerLink="/"> <i class="fa-solid fa-bullhorn"></i> <span>Official Announcement</span></a>
+            <a routerLink="/resident-concern"> <i class="fa-solid fa-people-group"></i> <span>Resident Concern</span></a>
+            <a routerLink="/sk-announcement"> <i class="fa-solid fa-bullhorn"></i>  <span>SK Announcement</span></a>
+            @if(user()?.role === "sk"){
+                <a> <i class="fa-solid fa-bullhorn"></i>  <span>Manage SK Announcement</span></a>
+            }
+        </div>
+
+
+        <div class="footer">
+            <div class="setting-oc">
+                @if(isLogin()){
+                    <a><i class="fa-solid fa-right-from-bracket"></i> <span>Log out</span></a>
+                }
+                @if(!isLogin()){
+                    <a><i class="fa-solid fa-right-to-bracket"></i> <span>Log in</span></a>
+                }
+            </div>
+            @if(isLogin() && user()){
+                <div class="user-info-oc">
+                    <img src="/image.jpg" alt="">
+                    <div class="user-info-ic">
+                        <p><b>{{user()?.name}}</b></p>
+                        <p>randyflores@gmail.com</p>
+                    </div>
+                </div>
+            }
+        </div>
+
+    </nav>
+</aside>

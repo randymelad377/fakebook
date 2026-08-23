@@ -1,0 +1,293 @@
+:host {
+  display: block;
+  height: 100%;
+  color: var(--color-text);
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.right-aside {
+  width: clamp(250px, 26.5vw, 350px);
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--color-surface);
+  border-left: 1px solid var(--color-border);
+
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.button-container {
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+
+  gap: var(--padding-sm);
+
+  padding: var(--padding-md);
+
+  border-bottom: 1px solid var(--color-border);
+}
+
+.button-container button {
+  flex: 1;
+
+  min-height: 36px;
+
+  padding: 0 var(--padding-md);
+
+  border: none;
+  border-radius: var(--radius);
+
+  background-color: var(--color-background);
+  color: var(--color-text-secondary);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 150ms ease,
+    color 150ms ease;
+}
+
+.button-container button:hover {
+  background-color: var(--color-border);
+  color: var(--color-text);
+}
+
+.button-container button.active {
+  background-color: #e7f3ff;
+  color: var(--color-primary);
+}
+
+
+/* =========================
+   NOTIFICATIONS
+========================= */
+
+.notification-container {
+  flex: 1;
+
+  min-height: 0;
+
+  margin: 0;
+  padding: var(--padding-sm);
+
+  list-style: none;
+
+  overflow-y: auto;
+}
+
+
+/* =========================
+   NOTIFICATION ITEM
+========================= */
+
+.notification-container li {
+  min-width: 0;
+
+  padding: var(--padding-sm);
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: var(--padding-sm);
+
+  border-radius: var(--radius);
+
+  cursor: pointer;
+
+  transition: background-color 150ms ease;
+}
+
+.notification-container li:hover {
+  background-color: var(--color-background);
+}
+
+
+/* =========================
+   AVATAR
+========================= */
+
+.notification-container li img {
+  width: 40px;
+  height: 40px;
+
+  flex: 0 0 40px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  background-color: var(--color-background);
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.notification-container li > div {
+  min-width: 0;
+
+  flex: 1;
+}
+
+.notification-container p {
+  margin: 0;
+
+  line-height: 1.35;
+}
+
+.notification-container p:first-child {
+  margin-bottom: 2px;
+
+  font-size: 14px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.notification-container p:last-child {
+  color: var(--color-text-secondary);
+
+  font-size: 13px;
+
+  overflow: hidden;
+}
+
+.notification-container p b {
+  color: var(--color-text);
+}
+
+
+/* =========================
+   DATE / TIME
+========================= */
+
+.notification-container span {
+  display: block;
+
+  margin-top: 3px;
+
+  color: var(--color-text-secondary);
+
+  font-size: 11px;
+}
+
+
+/* =========================
+   ELLIPSIS
+========================= */
+
+.notification-container li > i {
+  flex: 0 0 32px;
+
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 4px;
+
+  border-radius: 50%;
+
+  color: var(--color-text-secondary);
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  transition:
+    background-color 150ms ease,
+    color 150ms ease;
+}
+
+.notification-container li > i:hover {
+  background-color: var(--color-border);
+
+  color: var(--color-text);
+}
+@media (max-width: 999px) {
+    :host{
+        width: 80%;
+        height: 92.5vh;
+        position: fixed;
+
+        top: clamp(56px, 7vh, 72px);
+        left: 0;
+        bottom: 0;
+    }
+    .right-aside{
+        width: 100%;
+    }
+}
+
+/* =========================
+   OFFLINE / LOGGED OUT
+========================= */
+
+.offline-notif {
+  height: 100%;
+
+  margin: 0;
+  padding: var(--padding-lg);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  color: var(--color-text-secondary);
+
+  font-size: 15px;
+  font-weight: 500;
+
+  line-height: 1.6;
+
+  background-color: var(--color-surface);
+
+  box-sizing: border-box;
+}
+
+.offline-notif::before {
+  content: "\f05a";
+
+  position: absolute;
+
+  margin-top: -110px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  background-color: #e7f3ff;
+  color: var(--color-primary);
+
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+
+  font-size: 20px;
+}

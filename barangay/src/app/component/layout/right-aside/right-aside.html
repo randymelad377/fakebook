@@ -1,0 +1,22 @@
+<aside class="right-aside">
+    @if(isLogin()){
+        <div class="button-container">
+                <button>Read</button>
+                <button>Unread</button>
+            </div>
+            <ol class="notification-container">
+                @for(notification of notifications; track notification.id){
+                    <li>
+                        <img [src]="notification.user_image" alt="">
+                        <div>
+                            <p><b>{{notification.user_name}}</b></p>
+                            <p>{{notification.message}} <span>{{notification.date_time}}</span></p>
+                        </div>
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </li>
+                }
+            </ol>
+    }@else{
+        <p class="offline-notif">Join our barangay system to be updated on barangay announcement and other resident concerns</p>
+    }
+</aside>

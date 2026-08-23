@@ -1,0 +1,227 @@
+:host {
+  display: block;
+  height: 100%;
+
+  color: var(--color-text);
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.left-aside {
+  width: clamp(250px, 26.5vw, 350px);
+  height: 100%;
+
+  background-color: var(--color-surface);
+
+  border-right: 1px solid var(--color-border);
+
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.left-aside-ic {
+  height: 100%;
+
+  padding: var(--padding-md);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   MAIN NAV
+========================= */
+
+.main-nav {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+
+/* =========================
+   NAV ITEM
+========================= */
+
+.main-nav a,
+.setting-oc a {
+  min-height: 44px;
+
+  padding: 0 var(--padding-md);
+
+  display: flex;
+  align-items: center;
+
+  gap: var(--padding-md);
+
+  border-radius: var(--radius);
+
+  color: var(--color-text);
+  text-decoration: none;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background-color 150ms ease,
+    color 150ms ease;
+}
+
+
+/* Icon */
+
+.main-nav a i,
+.setting-oc a i {
+  width: 20px;
+
+  display: flex;
+  justify-content: center;
+
+  color: var(--color-text-secondary);
+
+  font-size: 18px;
+}
+
+
+/* Hover */
+
+.main-nav a:hover,
+.setting-oc a:hover {
+  background-color: var(--color-background);
+}
+
+
+/* Active */
+
+.main-nav a.active {
+  background-color: #e7f3ff;
+  color: var(--color-primary);
+}
+
+.main-nav a.active i {
+  color: var(--color-primary);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  display: flex;
+  flex-direction: column;
+
+  gap: var(--padding-sm);
+
+  border-top: 1px solid var(--color-border);
+
+  padding-top: var(--padding-md);
+}
+
+
+/* =========================
+   LOGOUT
+========================= */
+
+.setting-oc {
+  width: 100%;
+}
+
+
+/* =========================
+   USER INFO
+========================= */
+
+.user-info-oc {
+  padding: var(--padding-sm);
+
+  display: flex;
+  align-items: center;
+
+  gap: var(--padding-sm);
+
+  border-radius: var(--radius);
+
+  cursor: pointer;
+
+  transition: background-color 150ms ease;
+}
+
+.user-info-oc:hover {
+  background-color: var(--color-background);
+}
+
+
+/* Avatar */
+
+.user-info-oc img {
+  width: 40px;
+  height: 40px;
+
+  flex: 0 0 40px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  background-color: var(--color-background);
+}
+
+
+/* User text */
+
+.user-info-ic {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.user-info-ic p {
+  margin: 0;
+
+  overflow: hidden;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.user-info-ic p:first-child {
+  font-size: 14px;
+}
+
+.user-info-ic p:last-child {
+  margin-top: 2px;
+
+  color: var(--color-text-secondary);
+
+  font-size: 12px;
+}
+
+@media (max-width: 700px) {
+    :host{
+        width: 80%;
+        height: 92.5vh;
+        position: fixed;
+
+        top: clamp(56px, 7vh, 72px);
+        left: 0;
+        bottom: 0;
+    }
+    .left-aside{
+        width: 100%;
+    }
+}

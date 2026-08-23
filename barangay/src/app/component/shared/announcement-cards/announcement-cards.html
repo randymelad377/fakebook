@@ -1,0 +1,40 @@
+<section class="announcement-card-oc">
+    @for(announcement of search.announcements; track announcement){
+        <div class="post-header-oc">
+            <div class="poster-info">
+                <div>
+                    <img [src]="announcement.poster_image" alt="">
+                    <div class="poster-info-ic">
+                        <p>{{announcement.poster_name}}</p>
+                        <p>{{announcement.date_posted}}</p>
+                    </div>
+                </div>
+                @if((auth.currentUser().role === "sk" && type() === "sk-announcement") || (auth.currentUser().role === "barangay" && type() === "barangay-announcement")){
+                    <i class="fa-solid fa-ellipsis" (click)="selectAnnouncement(announcement.id)"></i>
+                    @if(selectedAnnouncementId === announcement.id){
+                        <div class="setting-oc">
+                            <button>Edit</button>
+                            <button>Private</button>
+                            <button>Delete</button>
+                        </div>
+                    }
+                }
+            </div>
+            <div class="description-oc">
+                <p>{{announcement.description}}</p>
+            </div>
+            <div>
+                @for(image of announcement.images; track image){
+                    <img [src]="image" alt="">
+                }   
+            </div>
+            <div class="action-oc">
+                @if(auth.currentUser().role === "user"){
+                    <button>Report</button>
+                }
+                <button>Comment</button>
+                <button>Pin</button>
+            </div>
+        </div>
+    }
+</section>

@@ -1,0 +1,117 @@
+.search-bar-oc {
+  width: clamp(180px, 30vw, 400px);
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 var(--padding-sm);
+
+  background-color: var(--color-background);
+
+  border: 1px solid transparent;
+  border-radius: 999px;
+
+  box-sizing: border-box;
+
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    box-shadow 150ms ease;
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+.search-input {
+  width: 100%;
+  height: 100%;
+
+  padding: 0 var(--padding-sm);
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: var(--color-text);
+
+  font-size: 14px;
+
+  box-sizing: border-box;
+}
+
+.search-input::placeholder {
+  color: var(--color-text-secondary);
+}
+
+
+/* =========================
+   SEARCH BUTTON
+========================= */
+
+.search-button {
+  width: 32px;
+  height: 32px;
+
+  flex: 0 0 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: var(--color-text-secondary);
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  transition:
+    background-color 150ms ease,
+    color 150ms ease;
+}
+
+.search-button:hover {
+  background-color: var(--color-border);
+
+  color: var(--color-text);
+}
+
+
+/* =========================
+   FOCUS
+========================= */
+
+.search-bar-oc:focus-within {
+  background-color: var(--color-surface);
+
+  border-color: var(--color-border);
+
+  box-shadow: var(--shadow-surface);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .search-bar-oc {
+    width: clamp(150px, 45vw, 250px);
+
+    height: 38px;
+  }
+
+  .search-input {
+    font-size: 13px;
+  }
+}

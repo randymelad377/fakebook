@@ -1,0 +1,47 @@
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+:root {
+  /* Main page background */
+  --color-background: #f0f2f5;
+
+  /* Cards, navbar, posts, sidebars */
+  --color-surface: #ffffff;
+
+  /* Modal background */
+  --color-modal: #ffffff;
+
+  /* Text */
+  --color-text: #050505;
+  --color-text-secondary: #65676b;
+
+  /* Borders */
+  --color-border: #dddfe2;
+
+  /* Facebook blue */
+  --color-primary: #1877f2;
+
+  /* Overlay behind modal */
+  --color-overlay: rgba(0, 0, 0, 0.5);
+
+  /* Shadows */
+  --shadow-surface: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-modal: 0 8px 30px rgba(0, 0, 0, 0.25);
+
+  /*font size */
+  --font-sm: 8px;
+  --font-md: 16px;
+  --font-lg: 24px;
+
+  /*padding size */
+  --padding-sm: 8px;
+  --padding-md: 16px;
+  --padding-lg: 24px;
+
+  /* Border radius */
+  --radius: 8px;
+  --radius-modal: 12px;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}

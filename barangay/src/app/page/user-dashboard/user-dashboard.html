@@ -1,0 +1,23 @@
+<div class="main-ic">
+    <div class="search-bar-oc">
+        <app-search-bar [(searchInput)]="search.searchInput"></app-search-bar>
+        <div class="search-by-oc">
+            <i (click)="toggleShowSearchBy()" class="menu-icon fa-solid fa-bars-staggered"></i>
+
+            @if(showSeachBy){
+                <div class="search-by-ic">
+                    <button (click)="toggleShowSearchBy(); toggleSearchBy('title')">Title</button>
+                    <button (click)="toggleShowSearchBy(); toggleSearchBy('description')">Description</button>
+                    <button (click)="toggleShowSearchBy(); toggleSearchBy('poster_name')">Poster Name</button>
+                </div>
+            }
+        </div>
+    </div>
+    <router-outlet></router-outlet>
+    <div class="add-concern-oc">
+        <button class="add-concern-btn">
+            <i class="fa-solid fa-plus"></i>
+            <span>{{add_label}}</span>
+        </button>
+    </div>
+</div>
